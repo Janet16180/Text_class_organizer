@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "text_class_organizer"
+version = "0.1.0"
+description = "Streamlined text clustering library for automated pattern detection and grouping"
+authors = ["JanetRivera <clarajanet16180@outlook.com>"]
+license = "apache-2.0"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
