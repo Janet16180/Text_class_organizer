@@ -141,7 +141,10 @@ class Error_clusterer_base(ABC):
             closest_label = max(cosine_distances, key=cosine_distances.get)
             clusters_result[closest_label].append(log_entry)
 
-        return clusters_resultclosest_label
+        return clusters_result
+
+
+    def save_model(self, path: Path) -> None:
         with open(path, 'wb') as f:
             pickle.dump(self.centroid_indices, f)
 
