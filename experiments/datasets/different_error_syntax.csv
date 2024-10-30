@@ -1,0 +1,224 @@
+Error,Type
+error C2143: syntax error: missing ';' before '}',C_error
+error C2664: cannot convert argument 1 from 'std::string' to 'const char*',C_error
+error C2061: syntax error: identifier 'string',C_error
+error C3861: 'cout': identifier not found,C_error
+error C2039: 'vector': is not a member of 'std',C_error
+error C2065: 'nullptr' : undeclared identifier,C_error
+error C2511: 'void MyClass::myFunction(void)' : overloaded member function not found in 'MyClass',C_error
+error C2678: binary '<<' : no operator found which takes a left-hand operand of type 'std::ostream',C_error
+"error C2784: 'template<class _Elem,class _Traits> std::basic_ostream<_Elem,_Traits>' : could not deduce template argument",C_error
+"error C2440: 'initializing' : cannot convert from 'int' to 'std::vector<int,std::allocator<int>>'",C_error
+error C2512: no appropriate default constructor available,C_error
+"error C2248: 'std::map<Key,T>::map' : cannot access private member declared in class 'std::map<Key,T>'",C_error
+error C2662: 'Type::function' : cannot convert 'this' pointer from 'const Type' to 'Type &',C_error
+error C2059: syntax error : '}',C_error
+error C2228: left of '.length' must have class/struct/union,C_error
+fatal error LNK1120: 2 unresolved externals,C_error
+error C4430: missing type specifier - int assumed,C_error
+error C2676: binary '+': 'std::string' does not define this operator,C_error
+error C2679: binary '=': no operator found which takes a right-hand operand of type 'const char [6]',C_error
+error C4996: 'strcpy': This function or variable may be unsafe,C_error
+error C2082: redefinition of formal parameter 'x',C_error
+error C2086: 'int x': redefinition,C_error
+error C2466: cannot allocate an array of constant size 0,C_error
+error C2057: expected constant expression,C_error
+error C2088: '<<': illegal for struct/union,C_error
+error C2597: illegal reference to non-static member 'MyClass::myVar',C_error
+error C2668: 'function': ambiguous call to overloaded function,C_error
+error C3867: 'Class::method': non-standard syntax; use '&' to create a pointer to member,C_error
+error C2593: 'operator <<' is ambiguous,C_error
+error C2660: 'function': function does not take 2 arguments,C_error
+error C2064: term does not evaluate to a function taking 2 arguments,C_error
+error C2797: 'MyClass::MyFunction': list initialization inside member initializer list or non-static data member initializer is not implemented,C_error
+error MSB3073: The command 'echo Building...' exited with code 1,C_error
+error C2220: warning treated as error - no 'object' file generated,C_error
+error C2782: 'template parameter' : template parameter not used in parameter list,C_error
+error C2338: static_assert failed: 'T must be a pointer type',C_error
+error C2280: 'Class::Class(void)': attempting to reference a deleted function,C_error
+"error C2327: 'MyNamespace::MyClass': is not a type name, static, or enumerator",C_error
+error C2131: expression did not evaluate to a constant,C_error
+error C2398: conversion from 'lambda []void->void' to 'void *': illegal in a constant-expression,C_error
+error C2672: 'function': no matching overloaded function found,C_error
+error C2514: 'class': class has no constructors,C_error
+error C2955: 'std::array': use of class template requires template argument list,C_error
+error C3646: 'unknown_identifier': unknown override specifier,C_error
+TypeError: can only concatenate str (not 'int') to str at line 45 in process_data.py,python_error
+IndexError: list index out of range at line 123 in data_handler.py,python_error
+ZeroDivisionError: division by zero at line 67 in calculator.py,python_error
+AttributeError: 'NoneType' object has no attribute 'append' at line 89 in list_operations.py,python_error
+KeyError: 'user_id' at line 234 in user_management.py,python_error
+ValueError: invalid literal for int() with base 10: 'abc' at line 156 in converter.py,python_error
+NameError: name 'total_sum' is not defined at line 78 in calculations.py,python_error
+ModuleNotFoundError: No module named 'tensorflow' at line 12 in ml_model.py,python_error
+RecursionError: maximum recursion depth exceeded at line 45 in recursive_function.py,python_error
+ImportError: cannot import name 'DataFrame' from 'pandas' at line 3 in data_analysis.py,python_error
+"MemoryError: Unable to allocate array with shape (1000000, 1000000) at line 89 in matrix_ops.py",python_error
+UnboundLocalError: local variable 'counter' referenced before assignment at line 167 in counter.py,python_error
+RuntimeError: Generator raised StopIteration at line 45 in generator_func.py,python_error
+FileNotFoundError: [Errno 2] No such file or directory: 'data.csv' at line 23 in file_processor.py,python_error
+OverflowError: math range error at line 92 in mathematical_operations.py,python_error
+RuntimeError: Event loop is closed at line 78 in async_handler.py,python_error
+ImportError: DLL load failed while importing _sqlite3: The specified module could not be found at line 1,python_error
+TypeError: Object of type float32 is not JSON serializable at line 234 in json_utils.py,python_error
+RuntimeError: CUDA out of memory. Tried to allocate 2.20 GiB at line 156 in train.py,python_error
+OSError: [WinError 10048] Only one usage of each socket address is permitted at line 89,python_error
+ModuleNotFoundError: No module named 'cv2'. Did you forget to activate your virtual environment? at line 12,python_error
+PermissionError: [Errno 13] Permission denied: '/usr/local/lib/python3.8' at line 45,python_error
+"ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')) at line 167",python_error
+TimeoutError: [WinError 10060] A connection attempt failed because the party did not properly respond at line 91,python_error
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte at line 127,python_error
+UnicodeEncodeError: 'ascii' codec can't encode character '’' in position 45: ordinal not in range(128),python_error
+"SyntaxError: unexpected EOF while parsing (<string>, line 1) at line 234 in parser.py",python_error
+BufferError: memoryview: underlying buffer is not C-contiguous at line 56 in memory_ops.py,python_error
+TypeError: cannot unpack non-iterable int object at line 89 in data_unpacking.py,python_error
+ValueError: Found array with dim 4. Estimator expected <= 2 at line 123 in ml_processing.py,python_error
+RuntimeError: cannot reuse already awaited coroutine at line 45 in async_func.py,python_error
+OSError: [Errno 28] No space left on device at line 678 in file_writer.py,python_error
+ConnectionRefusedError: [WinError 10061] No connection could be made at line 89 in network.py,python_error
+sqlite3.OperationalError: database is locked at line 234 in db_operations.py,python_error
+concurrent.futures._base.TimeoutError: Task timed out after 300 seconds at line 45,python_error
+multiprocessing.TimeoutError: Queue.get(timeout=5) timed out at line 123,python_error
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0) at line 89,python_error
+yaml.parser.ParserError: while parsing a block mapping at line 3 column 1 at line 167,python_error
+psycopg2.OperationalError: FATAL: database 'mydb' does not exist at line 45,python_error
+"requests.exceptions.SSLError: HTTPSConnectionPool(host='api.example.com', port=443) at line 234",python_error
+pandas.errors.EmptyDataError: No columns to parse from file at line 78,python_error
+numpy.linalg.LinAlgError: Singular matrix at line 156 in matrix_calc.py,python_error
+pygame.error: video system not initialized at line 45 in game.py,python_error
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Matrix size-incompatible at line 234,python_error
+"pickle.UnpicklingError: invalid load key, 'v' at line 89 in serializer.py",python_error
+xml.etree.ElementTree.ParseError: not well-formed (invalid token) at line 12,python_error
+asyncio.exceptions.CancelledError: Task was cancelled at line 167,python_error
+jinja2.exceptions.TemplateNotFound: base.html at line 45 in template_handler.py,python_error
+sqlalchemy.exc.IntegrityError: UNIQUE constraint failed: users.email at line 234,python_error
+PIL.UnidentifiedImageError: cannot identify image file 'corrupt.jpg' at line 89,python_error
+redis.exceptions.ConnectionError: Error 111 connecting to localhost:6379 at line 123,python_error
+kubernetes.client.rest.ApiException: (403) Reason: Forbidden at line 45 in k8s_client.py,python_error
+websockets.exceptions.ConnectionClosed: code = 1006 at line 167 in websocket_handler.py,python_error
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:8080 at line 234,python_error
+requests.exceptions.ConnectionError: Max retries exceeded with url: /api/v1 at line 89,python_error
+django.db.utils.OperationalError: no such table: auth_user at line 45,python_error
+boto3.exceptions.S3UploadFailedError: Failed to upload file.txt to bucket at line 123,python_error
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with status code 14 at line 167,python_error
+pymongo.errors.ServerSelectionTimeoutError: No servers found yet at line 234,python_error
+docker.errors.APIError: 404 Client Error: Not Found ('No such image: python:3.9') at line 89,python_error
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES),mysql_error
+ERROR 2003 (HY000): Can't connect to MySQL server on 'localhost' (10061),mysql_error
+ERROR 1044 (42000): Access denied for user 'app_user'@'%' to database 'customer_db',mysql_error
+ERROR 1146 (42S02): Table 'users.employees' doesn't exist,mysql_error
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails,mysql_error
+ERROR 1062 (23000): Duplicate entry '123' for key 'PRIMARY',mysql_error
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual near 'SLECT * FROM users' at line 1,mysql_error
+ERROR 1040 (08004): Too many connections,mysql_error
+ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction,mysql_error
+ERROR 1213 (40001): Deadlock found when trying to get lock; try restarting transaction,mysql_error
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails,mysql_error
+ERROR 1054 (42S22): Unknown column 'user_namee' in 'where clause',mysql_error
+ERROR 1136 (21S01): Column count doesn't match value count at row 1,mysql_error
+ERROR 1364 (HY000): Field 'username' doesn't have a default value,mysql_error
+ERROR 1215 (HY000): Cannot add foreign key constraint,mysql_error
+ERROR 1008 (HY000): Can't drop database 'users_db'; database doesn't exist,mysql_error
+ERROR 1035 (HY000): Near 'truncate' at line 1: Incorrect syntax,mysql_error
+ERROR 1068 (42000): Multiple primary key defined,mysql_error
+ERROR 1091 (42000): Can't DROP 'index_name'; check that column/key exists,mysql_error
+ERROR 1109 (42S02): Unknown table 'customer_orders' in information_schema,mysql_error
+ERROR 1130 (HY000): Host 'client_host' is not allowed to connect,mysql_error
+ERROR 1131 (42000): You are using safe update mode and you tried to update without a WHERE,mysql_error
+ERROR 1142 (42000): ALTER command denied to user 'app_user'@'localhost',mysql_error
+ERROR 1153 (08S01): Got a packet bigger than 'max_allowed_packet' bytes,mysql_error
+ERROR 1166 (42000): Incorrect column name 'usr_id',mysql_error
+ERROR 1175 (HY000): You are using safe update mode without WHERE clause,mysql_error
+ERROR 1216 (23000): Cannot add or update child row: foreign key check fails,mysql_error
+ERROR 1217 (23000): Cannot delete or update parent row: foreign key check fails,mysql_error
+ERROR 1227 (42000): Access denied; you need SUPER privilege,mysql_error
+ERROR 1241 (21000): Operand should contain 1 column(s),mysql_error
+ERROR 1242 (21000): Subquery returns more than 1 row,mysql_error
+ERROR 1248 (42000): Every derived table must have its own alias,mysql_error
+ERROR 1263 (22004): Invalid date value: '2024-13-45',mysql_error
+ERROR 1264 (22003): Out of range value for column 'age' at row 1,mysql_error
+ERROR 1265 (01000): Data truncated for column 'phone' at row 1,mysql_error
+ERROR 1292 (22007): Incorrect datetime value: '2024-02-30',mysql_error
+ERROR 1303 (2F004): Partition management on a not partitioned table,mysql_error
+ERROR 1304 (42000): PROCEDURE proc_name already exists,mysql_error
+ERROR 1305 (42000): FUNCTION func_name does not exist,mysql_error
+ERROR 1325 (24000): Cursor is not open,mysql_error
+ERROR 1347 (HY000): 'user_table'.'col1' is ambiguous,mysql_error
+ERROR 1364 (HY000): Field 'created_at' doesn't have a default value,mysql_error
+ERROR 1366 (HY000): Incorrect string value for column 'name' at row 1,mysql_error
+ERROR 1396 (HY000): Operation CREATE USER failed,mysql_error
+ERROR 1398 (HY000): SSL connection error: protocol version mismatch,mysql_error
+ERROR 1406 (22001): Data too long for column 'description' at row 1,mysql_error
+ERROR 1411 (HY000): Incorrect string value: '\xF0\x9F\x98\x83' for column 'emoji',mysql_error
+ERROR 1415 (0A000): Not allowed to return a result set from a trigger,mysql_error
+ERROR 1419 (HY000): You do not have the SUPER privilege,mysql_error
+ERROR 1442 (HY000): Can't update table in stored function/trigger,mysql_error
+ERROR 1451 (23000): Cannot delete parent row: foreign key constraint,mysql_error
+ERROR 1452 (23000): Cannot add child row: foreign key constraint,mysql_error
+ERROR 1460 (HY000): Only integers allowed in LIMIT clause,mysql_error
+ERROR 1461 (42000): Can't create more than max_prepared_stmt_count statements,mysql_error
+ERROR 1507 (HY000): Error creating temporary file,mysql_error
+ERROR 1524 (HY000): Plugin 'auth_socket' is not loaded,mysql_error
+ERROR 1525 (HY000): Incorrect table definition,mysql_error
+ERROR 1547 (HY000): Failed to create unique index,mysql_error
+ERROR 1557 (HY000): Duplicate entry for key 'unique_email',mysql_error
+ERROR 1586 (HY000): The total number of locks exceeds the lock table size,mysql_error
+ERROR 1615 (HY000): Prepared statement needs to be re-prepared,mysql_error
+ERROR 1630 (42000): FUNCTION db_name.func_name does not exist,mysql_error
+ERROR 1637 (HY000): Too many active concurrent transactions,mysql_error
+ERROR 1642 (HY000): Failed to create unique index with UUID,mysql_error
+ERROR 1644 (45000): Custom error message from trigger,mysql_error
+ERROR 1690 (22003): BIGINT value is out of range,mysql_error
+ERROR 1701 (42000): Cannot truncate a table referenced in a foreign key constraint,mysql_error
+ERROR 1714 (HY000): Cannot load from mysql.proc,mysql_error
+ERROR 1728 (HY000): Cannot load from mysql.event,mysql_error
+ERROR 1730 (42000): Cannot change column 'id': used in a foreign key constraint,mysql_error
+ERROR 1735 (HY000): Cannot create temporary table with foreign keys,mysql_error
+ERROR 1741 (HY000): Binary logging not possible,mysql_error
+ERROR 1750 (HY000): Invalid use of group function,mysql_error
+ERROR 1755 (42000): Cannot insert into generated column,mysql_error
+[Errno 13] Permission denied: '/etc/config.conf',linux_error
+Cannot open shared object file: No such file or directory,linux_error
+Too many open files in system,linux_error
+[Errno 28] No space left on device,linux_error
+Operation not permitted: '/var/log/syslog',linux_error
+Cannot allocate memory: fork failed,linux_error
+[Errno 2] No such file or directory: '/usr/local/bin/script',linux_error
+Failed to start service: Unit not found,linux_error
+Unable to lock /var/lib/dpkg/lock,linux_error
+System call failed: Connection refused,linux_error
+Failed to mount /dev/sda1: Device or resource busy,linux_error
+[Errno 24] Too many open files,linux_error
+Could not get lock /var/lib/apt/lists/lock,linux_error
+Failed to start daemon process: Address already in use,linux_error
+Buffer I/O error on device sda1,linux_error
+[Errno 111] Connection refused,linux_error
+Failed to execute process: Resource temporarily unavailable,linux_error
+Cannot create temp file: No space left on tmp,linux_error
+Authentication failure: pam_unix,linux_error
+"System load is too high, process killed",linux_error
+Failed to resolve hostname: Temporary failure in name resolution,linux_error
+Network is unreachable: eth0 device not found,linux_error
+[Errno 32] Broken pipe: '/dev/pts/0',linux_error
+Kernel panic - not syncing: Fatal exception in interrupt,linux_error
+Failed to start mysql.service: Unit entered failed state,linux_error
+Drive /dev/sdb1 has a bad superblock,linux_error
+SELinux is preventing access to /var/www/html,linux_error
+Journal has been rotated since unit was started,linux_error
+Failed to load module 'nvidia.ko': No such device,linux_error
+Out of memory: Kill process 1234 (apache2),linux_error
+Invalid block count: device /dev/mapper/root,linux_error
+ACPI Error: Method parse/execution failed,linux_error
+Failed to update apt cache: Hash Sum mismatch,linux_error
+SystemD unit masked: chronyd.service,linux_error
+GRUB failed to load kernel: Invalid signature,linux_error
+PAM unable to dlopen: /lib/security/pam_faillock.so,linux_error
+CUPS server-error-service-unavailable,linux_error
+Xorg: Fatal server error: no screens found,linux_error
+Failed to initialize RAID array: /dev/md0,linux_error
+NMI watchdog: BUG: soft lockup - CPU#2 stuck,linux_error
+Failed to start network.target: Job failed,linux_error
+Read-only file system: Cannot write to /var,linux_error
+"CPU temperature above threshold, cpu clock throttled",linux_error
+Failed to load firmware: rtl8821ce/rtl8821c_fw.bin,linux_error
+Secure Boot: Failed to verify module signature,linux_error

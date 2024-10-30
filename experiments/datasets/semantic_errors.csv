@@ -1,0 +1,211 @@
+Error,Type
+File not found: /usr/local/data/file.txt,file_not_found
+Error: No such file or directory: /var/logs/app.log,file_not_found
+Error: Unable to locate file: C:\Users\name\Documents\important.docx,file_not_found
+Warning: Missing configuration file: /etc/app.conf,file_not_found
+Alert: Data file not present: /mnt/storage/data.csv,file_not_found
+Error: File does not exist: /home/user/.bashrc,file_not_found
+Cannot open file: ~/.ssh/id_rsa.pub,file_not_found
+No such file or directory: /tmp/downloads/temp_file.tmp,file_not_found
+File missing: D:\Backups\2023\February\backup_001.zip,file_not_found
+Missing file error: config/settings.yml,file_not_found
+Error: Resource file not found: /var/lib/app/assets/logo.png,file_not_found
+Warning: Log file is missing: /opt/service/logs/service_output.log,file_not_found
+Cannot access file: C:\Windows\System32\drivers\etc\hosts,file_not_found
+FileNotFoundException: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf,file_not_found
+Unresolved file location: /etc/networks/network.cfg,file_not_found
+Error: Could not find stylesheet: css/theme.css,file_not_found
+Missing asset: js/bundle.js,file_not_found
+Document not found: ~/Documents/notes.txt,file_not_found
+File error: The file 'report.xls' could not be found,file_not_found
+Lookup failed: Invalid path to file '/invalid/path/to/file.txt',file_not_found
+"Critical Error: Configuration file not found at /usr/local/etc/config.cfg, unable to proceed with initialization.",file_not_found
+"FileNotFoundError: Attempted to access '/home/projects/data.json', but the file does not exist in the directory.",file_not_found
+"Warning: System log file '/var/log/system.log' is missing, functionality may be degraded without logging capabilities.",file_not_found
+Error: Report generation failed due to missing template: /home/templates/report_template.docx.,file_not_found
+Alert: The specified media file '/media/videos/movies/2023_promo.mp4' could not be located on the server.,file_not_found
+Server error: Unable to retrieve user profile picture: /srv/images/profiles/user_12345.png.,file_not_found
+Resource error: Missing CSS file '/assets/styles/main.min.css' results in broken page styling.,file_not_found
+"Failure: ML model weights file 'weights_best.pth' not found in /models/archives/, training cannot resume.",file_not_found
+Error: Failed to load cache data from '/cache/2023/03/01/cache_file.bin'. Cache initialization aborted.,file_not_found
+Notice: Document '/user/docs/book_drafts/chapter3.docx' deleted or moved to a different location.,file_not_found
+Process aborted: Essential document 'contract_v2_final.pdf' is missing; legal review pending.,file_not_found
+Flagged: Reference file '/references/citations.bib' not found; bibliography sections might be incomplete.,file_not_found
+"Access Denied: Cannot locate access log '/apache/logs/access.log', possibly due to permission errors.",file_not_found
+Missing File Alert: Source code file '/dev/src/utils/db_utils.py' not available in repository.,file_not_found
+Notification: Attempt to replace '/backups/monthly/April2023/backup.tar.gz' failed - file not found.,file_not_found
+Import Failure: The specified icon file '/icons/weather/sun.svg' is missing from the icon set.,file_not_found
+"Load Error: Could not locate required library 'libcrypto.so.1.1' in /usr/lib, application startup failed.",file_not_found
+"Synchronization Issue: Endpoint '/sync_data/updates.xml' not found, update process halted abruptly.",file_not_found
+"Data Retrieval Error: Cannot find requested file '/datasets/2023_analysis.xlsx', verify the data path.",file_not_found
+"Record Error: Missing CSV file '/exports/transactions_202303.csv', export operation incomplete.",file_not_found
+Connection refused: 192.168.1.10:9000,connection_error
+Connection timed out: api.example.com:443,connection_error
+Failed to connect to 10.0.0.5:3306,connection_error
+Network unreachable: vpn.company.com,connection_error
+SSL handshake failed with server: secure.example.com:443,connection_error
+Error: Host unreachable: localhost:8080,connection_error
+Connection dropped: 203.0.113.5:22,connection_error
+Failed DNS resolution for: unknownserver.net,connection_error
+Proxy error: Received invalid response from upstream server,connection_error
+Cannot establish connection: server.example.net is not responding,connection_error
+Connection reset by peer: 198.51.100.14:554,connection_error
+Gateway timeout: 10.1.1.1 did not respond in time,connection_error
+Firewall blocked connection attempt to 203.0.113.3:8080,connection_error
+"Protocol mismatch: Expected 'HTTPS', received 'HTTP'",connection_error
+Error: Secure connection failed due to incorrect certificate,connection_error
+Socket error: Cannot send data to 150.1.2.3:2020,connection_error
+VPN connection failed: Authentication error,connection_error
+Bandwidth limit exceeded on connection to media.example.org:8000,connection_error
+Unable to connect: Remote server refused connection request,connection_error
+Port not open: Trying to reach 15.25.35.45:9898,connection_error
+Connection aborted: Too many connections to 192.0.2.1:80,connection_error
+No route to host: Cannot reach 172.16.0.1:4000,connection_error
+"Error: Network interface down, unable to reach example.com",connection_error
+Problem with SSL certificate chain on secure-api.example.com,connection_error
+Unable to establish a persistent connection to 203.0.113.10:5050,connection_error
+Timeout while attempting to establish a connection to the server at 198.51.100.7:8443. Please check the network settings and try again.,connection_error
+"The server response was null, indicating a potential issue with server configuration at proxy.example.net:6666.",connection_error
+"Connection dropped unexpectedly after 10 minutes with server 172.16.254.1:9042, likely due to network instability.",connection_error
+Error: The requested service is not available at endpoint service.example.org:9090. Ensure the service is running.,connection_error
+Failed to negotiate a connection protocol with oldserver.example.com:5985; possibly due to outdated server software configurations.,connection_error
+"The IP address 192.0.2.55 is currently blacklisted by the remote host: mail.example.com, preventing connection establishment.",connection_error
+"Connection lockout detected: Excessive failed connection attempts to 192.168.100.10:22, please verify credentials and firewall rules.",connection_error
+"Critical error: The server at europe.datacenter.example.com refused multiple pings, suggesting a deeper connectivity issue.",connection_error
+"Connection bandwidth throttled to secureportal.example.com:9443, resulting in significant latency. Please contact your network admin.",connection_error
+Network unreachable error: VPN tunnel to remote office site (10.20.30.40:1194) failed due to route misconfiguration.,connection_error
+Multiple connection retries exhausted while connecting to database server db.example.org:5432 under heavy load conditions.,connection_error
+Remote end closed connection unexpectedly while SSL handshake was in progress. This may be due to incorrect handshake parameters.,connection_error
+"The connection to 198.51.100.22:7001 could not be established as the server refused HTTPS connections, accepting only HTTP.",connection_error
+Unable to establish secure session with storage.example.net due to SSL protocol mismatch. Ensure TLS 1.2 is supported.,connection_error
+"Connection packet loss detected to critical business service on 10.10.10.10:8081, impacting quality of user interaction.",connection_error
+Authentication over SSH failed for remote instance at 192.168.50.50:22. Ensure that public key authentication is configured correctly.,connection_error
+Connection limit exceeded for user 'apiuser' at devapi.example.com:5000. Consider increasing limit in the configuration.,connection_error
+"Unexpected TCP FIN received for open socket to 172.16.1.10:3307, indicating a premature session termination by the server.",connection_error
+Unable to connect to remote datastore at cloudstorage.example.net:10000 as IP restrictions are currently in place.,connection_error
+Error in establishing connection as remote server failed to respond within the 1-minute timeout period: archive.example.org:4555.,connection_error
+"Invalid floating-point format: expected 'X.XX', got '12,34'",invalid_input
+InputError: Character limit exceeded for field 'description',invalid_input
+"ValueError: Expected list, received dict",invalid_input
+Cannot convert 'twenty' to an integer,invalid_input
+"Invalid boolean value: received 'YES', expected 'true' or 'false'",invalid_input
+Input length too short: expected at least 8 characters,invalid_input
+Invalid hex color: '#123ABCG' is not a valid color code,invalid_input
+Numeric value out of acceptable range: -101,invalid_input
+Invalid decimal format: expected at most two decimal places,invalid_input
+Non-alphabetic characters present in name field,invalid_input
+URLParsingError: 'htt://example.com' is not a valid URL,invalid_input
+Invalid base64 encoding: string length is not a multiple of 4,invalid_input
+Expected non-empty string for parameter 'username',invalid_input
+Unsupported data type for configuration: 'complex',invalid_input
+Negative value encountered where positive was expected: -42,invalid_input
+Invalid email format: missing '@' in 'example.com',invalid_input
+"Expected dictionary, got list instead",invalid_input
+Invalid JSON: unescaped control character detected,invalid_input
+Unexpected null value in critical field,invalid_input
+SyntaxError: Unexpected character '\' in input string,invalid_input
+Input Validation Failed: The provided date '2022-02-29' does not exist in the calendar. Please verify the date and try again.,invalid_input
+Parsing Error: The CSV file contains an unexpected number of columns on line 42. Ensure all rows have consistent column counts.,invalid_input
+"ValidationError: The password must include at least one uppercase letter, one lowercase letter, one numeric digit, and one special character.",invalid_input
+Configuration Error: Unsupported boolean configuration detected. Value '2' is neither '0' nor '1'.,invalid_input
+SubscriptError: Index 10 out of range for list of size 5. Please ensure the index is within the bounds of the list.,invalid_input
+OverflowError: The provided value '9.223372036854776E+18' is too large for a 64-bit signed integer.,invalid_input
+"SchemaMismatch: Field 'age' expected data type INTEGER, found STRING instead. Please correct the input type.",invalid_input
+FormError: The contact form contains invalid entries; please ensure all required fields are filled and formatted correctly.,invalid_input
+"FileFormatError: Expected an .xlsx file but received an .xlsb file instead, which is not supported.",invalid_input
+"RegexMismatch: The input does not match the pattern '/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/'.",invalid_input
+"GeoValidationError: Latitude 100.000 exceeds valid range [−90, 90]. Please provide a valid latitude.",invalid_input
+ConversionError: Unable to convert '12 apples' to a numeric value for calculation.,invalid_input
+"FieldError: Expected a comma-separated list in field 'tags', but got single string.",invalid_input
+InvalidIDFormat: The user ID '00123X' must follow the pattern '[A-Z]{3}-[0-9]{4}'. Correct the format and submit again.,invalid_input
+"HexConversionError: Input 'G1H4' contains non-hexadecimal characters, please provide a valid hex string.",invalid_input
+CurrencyError: The provided currency code 'EURO' is not recognized; please use ISO 4217 currency codes.,invalid_input
+EncodingError: The provided text contains characters that cannot be encoded using UTF-8.,invalid_input
+ParameterMissing: The required parameter 'destination_address' is missing from the function call. Please provide it.,invalid_input
+RangeValidationError: Temperature input '573 K' exceeds expected range '294 K to 373 K'.,invalid_input
+TimeParsingError: The provided time '25:61' is invalid. Please use the 24-hour format 'HH:MM'.,invalid_input
+Authentication failed for user 'admin',authentication_failed
+Error: Invalid credentials for user 'jdoe',authentication_failed
+Access denied: User not authorized for resource /admin/settings,authentication_failed
+Login failed: Too many failed attempts for user 'employee1',authentication_failed
+Session expired: Please log in again to continue,authentication_failed
+Authentication error: User 'guest' is not found,authentication_failed
+Token invalid or expired: Please request a new token,authentication_failed
+Account locked: Multiple incorrect password attempts for 'user123',authentication_failed
+User not found: Please check the username or email provided,authentication_failed
+MFA required: Multi-factor authentication needed for account 'manager',authentication_failed
+Authorization error: User does not have permission to delete this item,authentication_failed
+Verification code incorrect: Please check and try again,authentication_failed
+Security question answer incorrect: Please reattempt,authentication_failed
+Access restricted: This account does not have admin privileges,authentication_failed
+Session terminated: Unauthorized access attempt detected,authentication_failed
+Password expired: Please reset your password to continue,authentication_failed
+Device not recognized: Verify login attempted on new device,authentication_failed
+OAuth login failed: External authentication service unreachable,authentication_failed
+Login disabled: User 'test_user' is disabled by admin,authentication_failed
+Unauthorized API access: Invalid API key provided,authentication_failed
+Social login error: Facebook authentication failed,authentication_failed
+Invalid SSO token: Single sign-on authentication unsuccessful,authentication_failed
+Account compromise detected: Account locked for security reasons,authentication_failed
+Authentication attempt blocked from untrusted network,authentication_failed
+Pending email verification: Check your email for activation link,authentication_failed
+Credentials verification unsuccessful for user 'superuser': Password hash mismatch detected.,authentication_failed
+Login failed due to account inactivity: User 'archive_account' has been inactive for over one year.,authentication_failed
+Authentication token revoked: User 'temp_user' attempted system access with a revoked session token.,authentication_failed
+Access denied: User 'service_account' lacks sufficient roles to perform the requested operation.,authentication_failed
+User login attempt blocked: The IP address 203.0.113.10 is blacklisted due to prior malicious activity.,authentication_failed
+Error: User 'remote_worker' attempted access from an unauthorized geographic location.,authentication_failed
+User profile incomplete: Cannot authenticate 'new_member' without required profile information completion.,authentication_failed
+"Two-factor authentication failed: Incorrect OTP entered by user 'secure_user', please try again.",authentication_failed
+Password policy violation: Attempted password does not meet minimum complexity requirements.,authentication_failed
+Device authentication failed: No trusted certificate found for device 'mobile_device_01'.,authentication_failed
+Single sign-on failed: The assertion provided by the identity provider for user 'partner_user' was invalid.,authentication_failed
+Authentication service timeout: The authentication server did not respond in a timely manner for user 'timeout_user'.,authentication_failed
+Biometric recognition error: Fingerprint scan did not match any enrolled prints for user 'biometric_user'.,authentication_failed
+"Error: Multiple concurrent login attempts detected for user 'concurrent_user', triggering security protocol.",authentication_failed
+User 'legacy_user' cannot log in: Account type is not supported by current authentication service.,authentication_failed
+API request denied: HMAC signature does not match for user 'api_client'.,authentication_failed
+Escalated permissions required: 'editor_user' attempted operation requiring 'admin' privileges.,authentication_failed
+Login unsuccessful: Attempt to bypass security protocols flagged and blocked by the system.,authentication_failed
+Security alert: Account recovery process triggered suspiciously for user 'recovering_user'.,authentication_failed
+Verification link expired: User 'email_user' attempted to verify account with an outdated link.,authentication_failed
+Database error: Connection pool exhausted,database_error
+"SQLSyntaxError: Unexpected token 'FROM' at line 3, column 15",database_error
+Transaction failed: Deadlock detected,database_error
+Permission denied: Unable to access table 'users',database_error
+Database error: Unknown database 'nonexistent_db',database_error
+DataIntegrityError: Duplicate entry '12345' for key 'PRIMARY',database_error
+TimeoutError: Query execution exceeded time limit,database_error
+SchemaError: Column 'email' not found in table 'customers',database_error
+Database connection lost during transaction,database_error
+Error: Foreign key constraint fails (table 'orders'),database_error
+Insufficient privileges: Unable to drop the database 'test_db',database_error
+LOB locator not valid: BLOB data extraction error,database_error
+Database locked: Unable to write to database during backup,database_error
+ReplicationError: Failed to replicate changes to secondary database,database_error
+CacheError: Failed to cache prepared statement,database_error
+DataConversionError: Cannot convert 'varchar' to 'integer',database_error
+QueryError: Subquery returns more than 1 row,database_error
+SerializationError: Data serialization failed while fetching rows,database_error
+ParseError: Unexpected end of SQL command in 'SELECT * FROM,database_error
+ServiceUnavailable: Database service temporarily offline,database_error
+BackupError: Failed to create a backup of the database due to insufficient disk space on server 'db-server02'.,database_error
+MetadataError: Table metadata mismatch detected in table 'products': column count does not match the database schema version 1.8.,database_error
+PartitionError: Unable to create partition: No space left on device for database 'user_data'.,database_error
+Error: Invalid table name '123abc_table' encountered during schema verification process.,database_error
+DatabaseError: Failed to initialize connection pool due to incorrect driver configuration in 'db_driver_config.yaml'.,database_error
+"NetworkError: Loss of connectivity detected between the primary and standby databases, read-only mode activated.",database_error
+"ClusterError: Node 'db-node3' in the cluster has been flagged as down due to health check failure, removing from rotation.",database_error
+PrivilegeEscalationError: Attempt to escalate privileges for user 'guest' failed due to unmet policy requirements.,database_error
+StorageError: Unable to expand storage capacity for tablespace 'data_ts' due to environment constraints.,database_error
+AuthenticationError: Database connection authentication failed - invalid token provided for user 'service_account'.,database_error
+ConsistencyViolation: Read operation returned inconsistent data during cross-region replication audit.,database_error
+DeletionError: Error encountered while purging old logs from audit table: primary key constraint violated.,database_error
+ArchiveError: Archival process for data older than 5 years failed at 80% completion due to unexpected server reboot.,database_error
+EncryptionError: Failed to decrypt data in column 'credit_card_info' using the specified key management system.,database_error
+IndexError: Automatic index creation failed for query optimization on 'high_volume_transactions'.,database_error
+"ConnectivityIssue: Intermittent connectivity issues detected between service layer and database API, affecting user queries.",database_error
+"DataCorruptionError: Data corruption detected in block 1234567 of segment file 9876543, invoking recovery protocols.",database_error
+Failed to establish new database session: Maximum open sessions threshold breached concurrently by active user workloads.,database_error
+MigrationError: Data migration script halted due to version mismatch in target schema 'schema_v2' during execution.,database_error
+"ReplicationLatency: Notable delay observed in synchronizing transactions to remote replica, exceeding threshold by 5 minutes.",database_error
