@@ -93,7 +93,6 @@ class Error_clusterer_naive_bayes(Error_clusterer_base):
         super().__init__(sentence_model)
         self.classifier = MultinomialNB(**kwargs)
         self.scaler = None
-        self.classifier = None
 
     def preprocess_features(self, cls_embbedings: torch.Tensor) -> torch.Tensor:
         """
@@ -112,6 +111,7 @@ class Error_clusterer_naive_bayes(Error_clusterer_base):
         torch.Tensor
             The preprocessed class embeddings.
         """
+        
         if self.scaler is not None:
             cls_embbedings = self.scaler.transform(cls_embbedings)
         else:
