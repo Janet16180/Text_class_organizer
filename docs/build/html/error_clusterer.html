@@ -1,0 +1,729 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Error Clusterer Base &mdash; Text_class_organizer Beta 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=613c0681"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Error Clusterer Quickstart Guide" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Text_class_organizer
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Error Clusterer Quickstart Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Error Clusterer Base</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#class-overview">Class Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#error-clusterer-implementations">Error Clusterer Implementations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#class-implementations">Class Implementations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#error-clusterer-centroid">Error_clusterer_centroid</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_centroid"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_centroid</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_centroid.fit"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_centroid.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_centroid.predict"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_centroid.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_centroid.preprocess_features"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_centroid.preprocess_features()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#error-clusterer-naive-bayes">Error_clusterer_naive_bayes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_naive_bayes"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_naive_bayes</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_naive_bayes.fit"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_naive_bayes.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_naive_bayes.predict"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_naive_bayes.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_naive_bayes.preprocess_features"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_naive_bayes.preprocess_features()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#error-clusterer-svm">Error_clusterer_svm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_svm"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_svm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_svm.fit"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_svm.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_svm.predict"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_svm.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_svm.predict_proba"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_svm.predict_proba()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_svm.preprocess_features"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_svm.preprocess_features()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#error-clusterer-random-forest">Error_clusterer_random_forest</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_random_forest"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_random_forest</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_random_forest.fit"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_random_forest.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_random_forest.predict"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_random_forest.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_random_forest.preprocess_features"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_random_forest.preprocess_features()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#error-clusterer-xgboost">Error_clusterer_xgboost</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_xgboost"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_xgboost</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_xgboost.fit"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_xgboost.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_xgboost.predict"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_xgboost.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_xgboost.preprocess_features"><code class="docutils literal notranslate"><span class="pre">Error_clusterer_xgboost.preprocess_features()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#usage-example">Usage Example</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Text_class_organizer</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Error Clusterer Base</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/error_clusterer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="error-clusterer-base">
+<h1>Error Clusterer Base<a class="headerlink" href="#error-clusterer-base" title="Link to this heading"></a></h1>
+<p>The <cite>Error_clusterer_base</cite> is an abstract base class designed to facilitate the clustering of error messages using sentence embeddings. It leverages the capabilities of pre-trained sentence transformer models to generate these embeddings.</p>
+<section id="class-overview">
+<h2>Class Overview<a class="headerlink" href="#class-overview" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Error_clusterer_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentence_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all-MiniLM-L6-v2'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_base.html#Error_clusterer_base"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>A base class for clustering error messages using sentence embeddings.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">tmp_dir</span></span></dt>
+<dd><p>Directory for storing temporary data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">tokenizer</span></span></dt>
+<dd><p>Pre-trained sentence transformer model for generating embeddings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>SentenceTransformer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sentence_model</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the pre-trained sentence transformer model to use, by default “all-MiniLM-L6-v2”.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentence_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all-MiniLM-L6-v2'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_base.html#Error_clusterer_base.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">clean_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_base.html#Error_clusterer_base.clean_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Clean text data by stripping whitespace and converting to lowercase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – The text to be cleaned.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Cleaned text.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">errors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_base.html#Error_clusterer_base.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Abstract method to fit the clustering model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>errors</strong> (<em>list</em><em> of </em><em>str</em>) – List of error messages to fit the model on.</p></li>
+<li><p><strong>labels</strong> (<em>list</em><em> of </em><em>Any</em>) – List of labels corresponding to the error messages.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_embeddings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">errors</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_base.html#Error_clusterer_base.get_embeddings"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Generate sentence embeddings for a list of error messages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>errors</strong> (<em>list</em><em> of </em><em>str</em>) – List of error strings for which embeddings are to be generated.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tensor of sentence embeddings.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">load_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_base.html#Error_clusterer_base.load_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Load model centroid indices from a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>Path</em>) – Path to the file from which the model will be loaded.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_base.html#Error_clusterer_base.predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Abstract method to predict the cluster labels for given data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>list</em><em> of </em><em>str</em>) – List of data strings for which predictions are to be made.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of predicted labels for the input data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">save_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_base.html#Error_clusterer_base.save_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Save the model’s centroid indices to a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>Path</em>) – Path to the file where the model will be saved.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<p>Below is an example of how to implement and use the <cite>Error_clusterer_base</cite> class:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">text_class_organizer.error_clusterer.error_clusterer_base</span> <span class="kn">import</span> <span class="n">Error_clusterer_base</span>
+<span class="kn">from</span> <span class="nn">sentence_transformers</span> <span class="kn">import</span> <span class="n">SentenceTransformer</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">MultinomialNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Any</span>
+
+<span class="k">class</span> <span class="nc">CustomErrorClusterer</span><span class="p">(</span><span class="n">Error_clusterer_base</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sentence_model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;all-MiniLM-L6-v2&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">sentence_model</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span> <span class="o">=</span> <span class="n">MultinomialNB</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scaler</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">preprocess_features</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cls_embeddings</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">scaler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">cls_embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">cls_embeddings</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+            <span class="n">cls_embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">cls_embeddings</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">cls_embeddings</span>
+
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">errors</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">labels</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">cls_embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_embeddings</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
+        <span class="n">cls_embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">preprocess_features</span><span class="p">(</span><span class="n">cls_embeddings</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">cls_embeddings</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+        <span class="n">cls_embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_embeddings</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">cls_embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">preprocess_features</span><span class="p">(</span><span class="n">cls_embeddings</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">cls_embeddings</span><span class="p">)</span>
+
+<span class="c1"># Example usage of the CustomErrorClusterer</span>
+<span class="n">clusterer</span> <span class="o">=</span> <span class="n">CustomErrorClusterer</span><span class="p">()</span>
+
+<span class="c1"># Example error messages</span>
+<span class="n">errors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Error: Failed to connect to database.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Warning: Low disk space.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Error: Out of memory.&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Corresponding labels</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;database&quot;</span><span class="p">,</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;memory&quot;</span><span class="p">]</span>
+
+<span class="c1"># Fit the model on the error messages</span>
+<span class="n">clusterer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+
+<span class="c1"># Predict labels for new errors</span>
+<span class="n">new_errors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Critical: No database connection.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Disk space is critically low.&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">predicted_labels</span> <span class="o">=</span> <span class="n">clusterer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">new_errors</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">predicted_labels</span><span class="p">)</span>  <span class="c1"># Output might be [&#39;database&#39;, &#39;system&#39;]</span>
+</pre></div>
+</div>
+<p>The <cite>Error_clusterer_naive_bayes</cite> class is an implementation of <cite>Error_clusterer_base</cite> that uses a Naive Bayes classifier. While this provides an immediate, simple clustering solution, users are encouraged to implement custom models by extending <cite>Error_clusterer_base</cite>. This flexibility allows for the use of different algorithms and techniques as needed.</p>
+</section>
+</section>
+<section id="error-clusterer-implementations">
+<h1>Error Clusterer Implementations<a class="headerlink" href="#error-clusterer-implementations" title="Link to this heading"></a></h1>
+<p>This section covers various implementations of the <cite>Error_clusterer_base</cite>, providing distinct methodologies for clustering error messages using different machine learning algorithms.</p>
+<section id="class-implementations">
+<h2>Class Implementations<a class="headerlink" href="#class-implementations" title="Link to this heading"></a></h2>
+</section>
+<section id="error-clusterer-centroid">
+<h2>Error_clusterer_centroid<a class="headerlink" href="#error-clusterer-centroid" title="Link to this heading"></a></h2>
+<p><cite>Error_clusterer_centroid</cite> uses a centroid-based clustering approach. Each cluster is represented by the mean of the embeddings from errors associated with a particular label.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_centroid">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Error_clusterer_centroid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentence_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all-MiniLM-L6-v2'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_centroid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_centroid" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Error_clusterer_base</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_centroid.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">errors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_centroid.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_centroid.fit" title="Link to this definition"></a></dt>
+<dd><p>Fits the centroid-based clustering model using the given errors and labels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>errors</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – A list of error strings to be clustered.</p></li>
+<li><p><strong>labels</strong> (<em>List</em><em>[</em><em>Any</em><em>]</em>) – A list of labels corresponding to each error.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_centroid.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_centroid.predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_centroid.predict" title="Link to this definition"></a></dt>
+<dd><p>Predicts the closest cluster label for each item in the given data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – A list of data strings for which to predict the closest cluster labels.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of predicted labels for the input data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_centroid.preprocess_features">
+<span class="sig-name descname"><span class="pre">preprocess_features</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_centroid.preprocess_features"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_centroid.preprocess_features" title="Link to this definition"></a></dt>
+<dd><p>Placeholder for feature preprocessing.
+:rtype: None</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="error-clusterer-naive-bayes">
+<h2>Error_clusterer_naive_bayes<a class="headerlink" href="#error-clusterer-naive-bayes" title="Link to this heading"></a></h2>
+<p><cite>Error_clusterer_naive_bayes</cite> is an implementation of <cite>Error_clusterer_base</cite> that applies a Naive Bayes classifier to cluster error messages based on their embeddings.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_naive_bayes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Error_clusterer_naive_bayes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentence_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all-MiniLM-L6-v2'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_naive_bayes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_naive_bayes" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Error_clusterer_base</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_naive_bayes.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">errors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_naive_bayes.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_naive_bayes.fit" title="Link to this definition"></a></dt>
+<dd><p>Fits the Naive Bayes classifier using the given errors and labels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>errors</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – A list of error strings to be clustered.</p></li>
+<li><p><strong>labels</strong> (<em>List</em><em>[</em><em>Any</em><em>]</em>) – A list of labels corresponding to each error.</p></li>
+<li><p><strong>**kwargs</strong> – Additional arguments for the MultinomialNB classifier.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_naive_bayes.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_naive_bayes.predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_naive_bayes.predict" title="Link to this definition"></a></dt>
+<dd><p>Predicts the labels for the given data using the trained classifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – A list of data strings for which to predict labels.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of predicted labels for the input data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_naive_bayes.preprocess_features">
+<span class="sig-name descname"><span class="pre">preprocess_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls_embbedings</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_naive_bayes.preprocess_features"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_naive_bayes.preprocess_features" title="Link to this definition"></a></dt>
+<dd><p>Preprocesses class embeddings using MinMaxScaler.</p>
+<p>If a scaler is already present, it transforms the embeddings;
+otherwise, it initializes a MinMaxScaler and fits the embeddings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cls_embbedings</strong> (<em>torch.Tensor</em>) – The class embeddings to be preprocessed.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The preprocessed class embeddings.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="error-clusterer-svm">
+<h2>Error_clusterer_svm<a class="headerlink" href="#error-clusterer-svm" title="Link to this heading"></a></h2>
+<p><cite>Error_clusterer_svm</cite> uses a Support Vector Machine (SVM) for classification. It preprocesses embeddings using StandardScaler and TruncatedSVD to handle high-dimensional data efficiently.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_svm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Error_clusterer_svm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentence_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all-MiniLM-L6-v2'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_svm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_svm" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Error_clusterer_base</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_svm.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">errors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_svm.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_svm.fit" title="Link to this definition"></a></dt>
+<dd><p>Fits the SVM classifier with the given errors and labels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>errors</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – A list of error strings to be clustered.</p></li>
+<li><p><strong>labels</strong> (<em>List</em><em>[</em><em>Any</em><em>]</em>) – A list of labels corresponding to each error.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_svm.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_svm.predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_svm.predict" title="Link to this definition"></a></dt>
+<dd><p>Predicts the labels for the given data using the trained SVM classifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – A list of data strings for which to predict labels.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of predicted labels for the input data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_svm.predict_proba">
+<span class="sig-name descname"><span class="pre">predict_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_svm.predict_proba"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_svm.predict_proba" title="Link to this definition"></a></dt>
+<dd><p>Predicts class probabilities for the given data using the trained SVM classifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – A list of data strings for which to predict class probabilities.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An array of predicted class probabilities for each input data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_svm.preprocess_features">
+<span class="sig-name descname"><span class="pre">preprocess_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls_embbedings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_svm.preprocess_features"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_svm.preprocess_features" title="Link to this definition"></a></dt>
+<dd><p>Preprocesses class embeddings using StandardScaler and TruncatedSVD.</p>
+<p>If the scaler and SVD are already initialized, it transforms the embeddings;
+otherwise, it initializes them and fits the embeddings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cls_embbedings</strong> (<em>torch.Tensor</em>) – The class embeddings to be preprocessed.</p></li>
+<li><p><strong>n_components</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of components for SVD, by default 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The preprocessed class embeddings.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="error-clusterer-random-forest">
+<h2>Error_clusterer_random_forest<a class="headerlink" href="#error-clusterer-random-forest" title="Link to this heading"></a></h2>
+<p><cite>Error_clusterer_random_forest</cite> leverages the Random Forest algorithm for clustering. It optionally applies TruncatedSVD for dimensionality reduction.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_random_forest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Error_clusterer_random_forest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentence_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all-MiniLM-L6-v2'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_random_forest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_random_forest" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Error_clusterer_base</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_random_forest.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">errors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_random_forest.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_random_forest.fit" title="Link to this definition"></a></dt>
+<dd><p>Fits the Random Forest classifier using the provided errors and labels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>errors</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – A list of error strings to be clustered.</p></li>
+<li><p><strong>labels</strong> (<em>List</em><em>[</em><em>Any</em><em>]</em>) – A list of labels corresponding to each error.</p></li>
+<li><p><strong>**kwargs</strong> – Additional keyword arguments for the RandomForestClassifier.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_random_forest.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_random_forest.predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_random_forest.predict" title="Link to this definition"></a></dt>
+<dd><p>Predicts the labels for the given data using the trained Random Forest classifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – A list of data strings for which to predict labels.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of predicted labels for the input data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_random_forest.preprocess_features">
+<span class="sig-name descname"><span class="pre">preprocess_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls_embeddings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_random_forest.preprocess_features"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_random_forest.preprocess_features" title="Link to this definition"></a></dt>
+<dd><p>Preprocesses class embeddings using TruncatedSVD.</p>
+<p>If the SVD transformer is already initialized, it transforms the embeddings;
+otherwise, it initializes TruncatedSVD and fits the embeddings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cls_embeddings</strong> (<em>torch.Tensor</em>) – The class embeddings to be preprocessed.</p></li>
+<li><p><strong>n_components</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of components for SVD, by default 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The preprocessed class embeddings.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="error-clusterer-xgboost">
+<h2>Error_clusterer_xgboost<a class="headerlink" href="#error-clusterer-xgboost" title="Link to this heading"></a></h2>
+<p><cite>Error_clusterer_xgboost</cite> implements an XGBoost classifier for clustering. It preprocesses features using both StandardScaler and TruncatedSVD, and maps labels to integer indices for compatibility with the XGBoost library.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_xgboost">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Error_clusterer_xgboost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentence_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all-MiniLM-L6-v2'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_xgboost"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_xgboost" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Error_clusterer_base</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_xgboost.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">errors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_xgboost.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_xgboost.fit" title="Link to this definition"></a></dt>
+<dd><p>Fits the XGBoost classifier with the given errors and labels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>errors</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – A list of error strings to be clustered.</p></li>
+<li><p><strong>labels</strong> (<em>List</em><em>[</em><em>Any</em><em>]</em>) – A list of labels corresponding to each error.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_xgboost.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_xgboost.predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_xgboost.predict" title="Link to this definition"></a></dt>
+<dd><p>Predicts the labels for the given data using the trained XGBoost classifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – A list of data strings for which to predict labels.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of predicted labels for the input data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_xgboost.preprocess_features">
+<span class="sig-name descname"><span class="pre">preprocess_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls_embbedings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/text_class_organizer/error_clusterer/error_clusterer_implementations.html#Error_clusterer_xgboost.preprocess_features"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_class_organizer.error_clusterer.error_clusterer_implementations.Error_clusterer_xgboost.preprocess_features" title="Link to this definition"></a></dt>
+<dd><p>Preprocesses class embeddings using StandardScaler and TruncatedSVD.</p>
+<p>If the scaler and SVD are already initialized, it transforms the embeddings;
+otherwise, it initializes them and fits the embeddings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cls_embbedings</strong> (<em>torch.Tensor</em>) – The class embeddings to be preprocessed.</p></li>
+<li><p><strong>n_components</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of components for SVD, by default 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The preprocessed class embeddings.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="usage-example">
+<h2>Usage Example<a class="headerlink" href="#usage-example" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">text_class_organizer</span> <span class="kn">import</span> <span class="n">Error_clusterer_naive_bayes</span>
+
+<span class="c1"># Initialize the Naive Bayes Error Clusterer</span>
+<span class="n">clusterer</span> <span class="o">=</span> <span class="n">Error_clusterer_naive_bayes</span><span class="p">()</span>
+
+<span class="c1"># Example error messages</span>
+<span class="n">errors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Error: Failed to connect to database.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Warning: Low disk space.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Error: Out of memory.&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Corresponding labels</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;database&quot;</span><span class="p">,</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;memory&quot;</span><span class="p">]</span>
+
+<span class="c1"># Fit the model on the error messages</span>
+<span class="n">clusterer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+
+<span class="c1"># Predict labels for new errors</span>
+<span class="n">new_errors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Critical: No database connection.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Disk space is critically low.&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">predicted_labels</span> <span class="o">=</span> <span class="n">clusterer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">new_errors</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">predicted_labels</span><span class="p">)</span>  <span class="c1"># Output might be [&#39;database&#39;, &#39;system&#39;]</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Error Clusterer Quickstart Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Clara Janet Rivera Medina.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
